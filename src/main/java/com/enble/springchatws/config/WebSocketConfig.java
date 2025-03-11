@@ -24,10 +24,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         // `/sub`가 prefix인 경우 이 메시지 브로커가 경로를 가로채어 처리
+        // 구독 요청
         registry.enableSimpleBroker("/sub");
 
         // `/pub`이 prefix인 경우 클라이언트의 메시지를 Broker에게 전달
-        // 메시지 전송 시의 경로 설정 메서드
+        // 메시지 발행 요청
         registry.setApplicationDestinationPrefixes("/pub");
     }
 }
