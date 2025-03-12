@@ -16,7 +16,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     // cors 설정 포함
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/stomp/chat").setAllowedOrigins("*");
+        registry.addEndpoint("/chat").setAllowedOrigins("*");
     }
 
     // 메모리 기반인 SimpleMessageBroker 활성화
